@@ -1,0 +1,26 @@
+{
+  "name": "shermdog-devnet_demo",
+  "version": "0.1.0",
+  "author": "Rick Sherman",
+  "summary": "Demo module for DevNet - Cisco Live",
+  "license": "Apache-2.0",
+  "source": "https://github.com/shermdog/devnet_demo",
+  "dependencies": [
+    {
+      "name": "puppetlabs/cisco_ios",
+      "version_requirement": ">= 0.1.0 < 1.0.0"
+    }
+  ],
+  "operatingsystem_support": [
+
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.7.0 < 6.0.0"
+    }
+  ],
+  "pdk-version": "1.6.0.pre (g640275c)",
+  "template-url": "file:///opt/puppetlabs/pdk/share/cache/pdk-templates.git",
+  "template-ref": "heads/master-0-g324997f"
+}
