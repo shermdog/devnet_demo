@@ -13,10 +13,4 @@ class devnet_demo::ntp_servers (
       vrf              => $parameters[vrf],
     }
   }
-
-  # Purge unmanaged resources
-  # resources { 'ntp_server': 
-  #   purge => true,
-  #   before => Ntp_server[keys($ntp)]
-  # }
 }
