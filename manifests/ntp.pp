@@ -1,8 +1,9 @@
-class devnet_demo::ntp_servers (
-  Hash $ntp = {},
+class devnet_demo::ntp (
+  Boolean $purge = false,
+  Hash $servers = {},
 ) {
 
-  $ntp.each |$server, $parameters| {
+  $servers.each |$server, $parameters| {
     ntp_server { $server:
       ensure           => $parameters[ensure],
       key              => $parameters[key],
@@ -11,6 +12,14 @@ class devnet_demo::ntp_servers (
       prefer           => $parameters[prefer],
       source_interface => $parameters[source_interface],
       vrf              => $parameters[vrf],
+    }
+  }
+
+  # Purge unmanaged instances if enabled
+  if $purge {
+    resources { 'ntp_server':
+      purge => true,
+      noop  => $noop,
     }
   }
 }
